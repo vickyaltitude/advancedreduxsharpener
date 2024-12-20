@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 function App() {
 
   const isToggle = useSelector(state => state.cartToggle.isToggle)
-  console.log(isToggle)
+ 
   return (
     <Layout>
       {isToggle &&  <Cart />}
