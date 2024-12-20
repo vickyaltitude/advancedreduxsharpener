@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialToggleState ={
-    isToggle: true
+    isToggle: true,
+    notificationHandler:null
 }
 
 const toggleReducer = createSlice({
@@ -10,6 +11,13 @@ const toggleReducer = createSlice({
     reducers:{
         setIsToggle(state){
             state.isToggle = !state.isToggle;
+        },
+        setNotificationHandler(state,action){
+            state.notificationHandler = {
+                status: action.payload.status,
+                message: action.payload.message,
+                title: action.payload.title
+            }
         }
     }
 })
